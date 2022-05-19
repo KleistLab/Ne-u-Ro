@@ -11,6 +11,7 @@ import pandas as pd
 import os
 import re
 import matplotlib.pyplot as plt
+from os import path
 
 
 plt.style.use('seaborn-darkgrid')
@@ -81,7 +82,9 @@ mutants = ['DLar', 'LiprinA', 'Syd1', 'Trio', 'WT']
 
 # import file assuming it is in xlsx format
 
-path = '/Users/carolinabarata/Documents/Filo-master/Data/FiloData/'
+basepath = path.dirname(__file__)
+
+path =  basepath + '/Filo_Data/FiloData/'
 
 # this threshold enables to classify filopodia as unstable (lifetime < classification_threshold) or
 # stable (lifetime >= classification_threshold)
